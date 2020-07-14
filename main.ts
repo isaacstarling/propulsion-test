@@ -6,7 +6,7 @@ input.onButtonPressed(Button.A, function () {
         # # # # #
         # # # # #
         `)
-    basic.pause(100)
+    basic.pause(300)
     basic.showLeds(`
         . . # . .
         . . # . .
@@ -16,7 +16,7 @@ input.onButtonPressed(Button.A, function () {
         `)
     basic.pause(700)
     StemSeals.DriveWheels(speed, steer)
-    basic.pause(1000)
+    basic.pause(2000)
     StemSeals.DriveWheels(0, steer)
 })
 input.onButtonPressed(Button.B, function () {
@@ -25,7 +25,7 @@ input.onButtonPressed(Button.B, function () {
     } else {
         speed += -10
     }
-    if (Math.abs(speed) < 100) {
+    if (Math.abs(speed) > 100) {
         speed = 0
         Forward = !(Forward)
     }
@@ -47,7 +47,7 @@ basic.forever(function () {
     basic.clearScreen()
     basic.pause(50)
     led.plot(2, 2)
-    LEDCount = Math.round(Math.abs(speed + 10))
+    LEDCount = Math.round(Math.abs(speed / 10))
     for (let index = 0; index <= LEDCount; index++) {
         if (index != 0) {
             if (Forward) {

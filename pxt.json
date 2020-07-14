@@ -3,7 +3,8 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "radio": "*"
+        "radio": "*",
+        "Steering (Rover)": "pub:95748-37426-36507-00342"
     },
     "files": [
         "main.blocks",
